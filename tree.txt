@@ -1,5 +1,2 @@
-workspace
-├── counter.v
-├── tb_counter.v
-└── Makefile
-
+updated content for tree.txt
+more updated content
