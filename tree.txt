@@ -1,0 +1,5 @@
+workspace
+├── counter.v
+├── tb_counter.v
+└── Makefile
+

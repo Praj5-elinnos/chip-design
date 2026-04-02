@@ -1,0 +1,215 @@
+{
+  "elaboration_time": "2026-04-01T08:26:31Z",
+  "instance_hierarchy": {
+    "children": [],
+    "full_path": "simple_clock",
+    "module_name": "simple_clock",
+    "name": "simple_clock",
+    "parameters": {
+      "CLOCK_PERIOD": 10
+    },
+    "task_scopes": []
+  },
+  "process_database": {
+    "processes": [
+      {
+        "code": {
+          "body": {
+            "node_type": "begin_end_block",
+            "statements": [
+              {
+                "delay": {
+                  "left": {
+                    "name": "CLOCK_PERIOD",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "binary_expression",
+                  "operator": "/",
+                  "right": {
+                    "node_type": "integer_literal",
+                    "value": 2
+                  }
+                },
+                "node_type": "delay_statement",
+                "statement": {
+                  "left": {
+                    "name": "internal_clk",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "blocking_assign",
+                  "right": {
+                    "node_type": "unary_expression",
+                    "operand": {
+                      "name": "internal_clk",
+                      "node_type": "identifier"
+                    },
+                    "operator": "~"
+                  }
+                }
+              }
+            ]
+          },
+          "kind": 0,
+          "node_type": "always_block",
+          "sensitivity": {
+            "edge_types": [],
+            "is_combinational": false,
+            "signals": []
+          }
+        },
+        "id": 0,
+        "instance_path": "simple_clock",
+        "sensitivity": [],
+        "source_file": "",
+        "source_line": 0,
+        "type": 4
+      },
+      {
+        "code": {
+          "body": {
+            "node_type": "begin_end_block",
+            "statements": [
+              {
+                "condition": {
+                  "node_type": "unary_expression",
+                  "operand": {
+                    "name": "reset_n",
+                    "node_type": "identifier"
+                  },
+                  "operator": "!"
+                },
+                "else": {
+                  "left": {
+                    "name": "clk",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "blocking_assign",
+                  "right": {
+                    "name": "internal_clk",
+                    "node_type": "identifier"
+                  }
+                },
+                "node_type": "if_statement",
+                "then": {
+                  "left": {
+                    "name": "clk",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "blocking_assign",
+                  "right": {
+                    "base": "b",
+                    "node_type": "integer_literal",
+                    "value": 0,
+                    "width": 1
+                  }
+                }
+              }
+            ]
+          },
+          "kind": 0,
+          "node_type": "always_block",
+          "sensitivity": {
+            "edge_types": [],
+            "is_combinational": true,
+            "signals": []
+          }
+        },
+        "id": 1,
+        "instance_path": "simple_clock",
+        "sensitivity": [
+          {
+            "edge": 0,
+            "signal_id": 1
+          },
+          {
+            "edge": 0,
+            "signal_id": 2
+          }
+        ],
+        "source_file": "",
+        "source_line": 0,
+        "type": 1
+      }
+    ]
+  },
+  "signal_database": {
+    "signals": [
+      {
+        "base_signal_id": 0,
+        "bit_index": -1,
+        "bit_signal_ids": [],
+        "drivers": [],
+        "full_path": "simple_clock.clk",
+        "has_pulldown": false,
+        "has_pullup": false,
+        "id": 0,
+        "is_array_aggregate": false,
+        "is_integer_type": false,
+        "is_signed": false,
+        "is_two_state": false,
+        "loads": [],
+        "name": "clk",
+        "owner_path": "simple_clock",
+        "sensitive_processes": [],
+        "type": 4,
+        "width": 1
+      },
+      {
+        "base_signal_id": 0,
+        "bit_index": -1,
+        "bit_signal_ids": [],
+        "drivers": [],
+        "full_path": "simple_clock.reset_n",
+        "has_pulldown": false,
+        "has_pullup": false,
+        "id": 1,
+        "is_array_aggregate": false,
+        "is_integer_type": false,
+        "is_signed": false,
+        "is_two_state": false,
+        "loads": [],
+        "name": "reset_n",
+        "owner_path": "simple_clock",
+        "sensitive_processes": [
+          1
+        ],
+        "type": 3,
+        "width": 1
+      },
+      {
+        "base_signal_id": 0,
+        "bit_index": -1,
+        "bit_signal_ids": [],
+        "drivers": [],
+        "full_path": "simple_clock.internal_clk",
+        "has_pulldown": false,
+        "has_pullup": false,
+        "id": 2,
+        "is_array_aggregate": false,
+        "is_integer_type": false,
+        "is_signed": false,
+        "is_two_state": false,
+        "loads": [],
+        "name": "internal_clk",
+        "owner_path": "simple_clock",
+        "sensitive_processes": [
+          1
+        ],
+        "type": 1,
+        "width": 1
+      }
+    ]
+  },
+  "signal_initial_values": {
+    "simple_clock.internal_clk": {
+      "base": "b",
+      "node_type": "integer_literal",
+      "value": 0,
+      "width": 1
+    }
+  },
+  "timescale": "1ns/1ps",
+  "top_module": "simple_clock",
+  "version": "1.0",
+  "work_library": "work"
+}

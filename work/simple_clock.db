@@ -1,0 +1,352 @@
+{
+  "compiler_version": "elvlog-1.0.0",
+  "interfaces": {},
+  "modules": {
+    "simple_clock": {
+      "declarations": [
+        {
+          "name": "CLOCK_PERIOD",
+          "node_type": "parameter_declaration",
+          "value": {
+            "node_type": "integer_literal",
+            "value": 10
+          }
+        },
+        {
+          "initial_value": {
+            "base": "b",
+            "node_type": "integer_literal",
+            "value": 0,
+            "width": 1
+          },
+          "name": "internal_clk",
+          "node_type": "reg_declaration"
+        }
+      ],
+      "has_explicit_timescale": false,
+      "imports": [],
+      "name": "simple_clock",
+      "node_type": "module",
+      "ports": [
+        {
+          "direction": "output",
+          "name": "clk",
+          "node_type": "port_declaration"
+        },
+        {
+          "direction": "input",
+          "name": "reset_n",
+          "node_type": "port_declaration"
+        }
+      ],
+      "source_file": "simple_clock.v",
+      "statements": [
+        {
+          "body": {
+            "node_type": "begin_end_block",
+            "statements": [
+              {
+                "delay": {
+                  "left": {
+                    "name": "CLOCK_PERIOD",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "binary_expression",
+                  "operator": "/",
+                  "right": {
+                    "node_type": "integer_literal",
+                    "value": 2
+                  }
+                },
+                "node_type": "delay_statement",
+                "statement": {
+                  "left": {
+                    "name": "internal_clk",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "blocking_assign",
+                  "right": {
+                    "node_type": "unary_expression",
+                    "operand": {
+                      "name": "internal_clk",
+                      "node_type": "identifier"
+                    },
+                    "operator": "~"
+                  }
+                }
+              }
+            ]
+          },
+          "kind": 0,
+          "node_type": "always_block",
+          "sensitivity": {
+            "edge_types": [],
+            "is_combinational": false,
+            "signals": []
+          }
+        },
+        {
+          "body": {
+            "node_type": "begin_end_block",
+            "statements": [
+              {
+                "condition": {
+                  "node_type": "unary_expression",
+                  "operand": {
+                    "name": "reset_n",
+                    "node_type": "identifier"
+                  },
+                  "operator": "!"
+                },
+                "else": {
+                  "left": {
+                    "name": "clk",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "blocking_assign",
+                  "right": {
+                    "name": "internal_clk",
+                    "node_type": "identifier"
+                  }
+                },
+                "node_type": "if_statement",
+                "then": {
+                  "left": {
+                    "name": "clk",
+                    "node_type": "identifier"
+                  },
+                  "node_type": "blocking_assign",
+                  "right": {
+                    "base": "b",
+                    "node_type": "integer_literal",
+                    "value": 0,
+                    "width": 1
+                  }
+                }
+              }
+            ]
+          },
+          "kind": 0,
+          "node_type": "always_block",
+          "sensitivity": {
+            "edge_types": [],
+            "is_combinational": true,
+            "signals": []
+          }
+        }
+      ],
+      "timescale": "1ns/1ps"
+    },
+    "tb_simple_clock": {
+      "declarations": [
+        {
+          "name": "clk",
+          "node_type": "reg_declaration"
+        },
+        {
+          "name": "reset_n",
+          "node_type": "reg_declaration"
+        }
+      ],
+      "has_explicit_timescale": false,
+      "imports": [],
+      "name": "tb_simple_clock",
+      "node_type": "module",
+      "ports": [],
+      "source_file": "simple_clock.v",
+      "statements": [
+        {
+          "connections": [
+            {
+              "expression": {
+                "name": "clk",
+                "node_type": "identifier"
+              },
+              "port_name": "clk"
+            },
+            {
+              "expression": {
+                "name": "reset_n",
+                "node_type": "identifier"
+              },
+              "port_name": "reset_n"
+            }
+          ],
+          "has_wildcard_ports": false,
+          "instance_name": "dut",
+          "module_name": "simple_clock",
+          "node_type": "module_instantiation",
+          "parameter_overrides": {
+            "CLOCK_PERIOD": {
+              "node_type": "integer_literal",
+              "value": 20
+            }
+          }
+        },
+        {
+          "body": {
+            "node_type": "begin_end_block",
+            "statements": [
+              {
+                "arguments": [
+                  {
+                    "is_string_literal": true,
+                    "name": "simple_clock.vcd",
+                    "node_type": "identifier"
+                  }
+                ],
+                "node_type": "system_task",
+                "task_name": "$dumpfile"
+              },
+              {
+                "arguments": [
+                  {
+                    "node_type": "integer_literal",
+                    "value": 0
+                  },
+                  {
+                    "name": "tb_simple_clock",
+                    "node_type": "identifier"
+                  }
+                ],
+                "node_type": "system_task",
+                "task_name": "$dumpvars"
+              },
+              {
+                "left": {
+                  "name": "reset_n",
+                  "node_type": "identifier"
+                },
+                "node_type": "blocking_assign",
+                "right": {
+                  "base": "b",
+                  "node_type": "integer_literal",
+                  "value": 0,
+                  "width": 1
+                }
+              },
+              {
+                "delay": {
+                  "node_type": "integer_literal",
+                  "value": 50
+                },
+                "node_type": "delay_statement"
+              },
+              {
+                "left": {
+                  "name": "reset_n",
+                  "node_type": "identifier"
+                },
+                "node_type": "blocking_assign",
+                "right": {
+                  "base": "b",
+                  "node_type": "integer_literal",
+                  "value": 1,
+                  "width": 1
+                }
+              },
+              {
+                "delay": {
+                  "node_type": "integer_literal",
+                  "value": 200
+                },
+                "node_type": "delay_statement"
+              },
+              {
+                "left": {
+                  "name": "reset_n",
+                  "node_type": "identifier"
+                },
+                "node_type": "blocking_assign",
+                "right": {
+                  "base": "b",
+                  "node_type": "integer_literal",
+                  "value": 0,
+                  "width": 1
+                }
+              },
+              {
+                "delay": {
+                  "node_type": "integer_literal",
+                  "value": 30
+                },
+                "node_type": "delay_statement"
+              },
+              {
+                "left": {
+                  "name": "reset_n",
+                  "node_type": "identifier"
+                },
+                "node_type": "blocking_assign",
+                "right": {
+                  "base": "b",
+                  "node_type": "integer_literal",
+                  "value": 1,
+                  "width": 1
+                }
+              },
+              {
+                "delay": {
+                  "node_type": "integer_literal",
+                  "value": 100
+                },
+                "node_type": "delay_statement"
+              },
+              {
+                "arguments": [],
+                "node_type": "system_task",
+                "task_name": "$finish"
+              }
+            ]
+          },
+          "node_type": "initial_block"
+        },
+        {
+          "body": {
+            "node_type": "begin_end_block",
+            "statements": [
+              {
+                "arguments": [
+                  {
+                    "is_string_literal": true,
+                    "name": "Time: %0t - Clock rising edge",
+                    "node_type": "identifier"
+                  },
+                  {
+                    "arguments": [],
+                    "function_name": "$time",
+                    "node_type": "function_call"
+                  }
+                ],
+                "node_type": "system_task",
+                "task_name": "$display"
+              }
+            ]
+          },
+          "kind": 0,
+          "node_type": "always_block",
+          "sensitivity": {
+            "edge_types": [
+              1
+            ],
+            "iff_conditions": [
+              null
+            ],
+            "is_combinational": false,
+            "signals": [
+              {
+                "name": "clk",
+                "node_type": "identifier"
+              }
+            ]
+          }
+        }
+      ],
+      "timescale": "1ns/1ps"
+    }
+  },
+  "packages": {},
+  "timestamp": "2026-04-01T08:26:31Z",
+  "udps": {},
+  "version": "1.0.0"
+}
