@@ -1,0 +1,72 @@
+# Simulation files
+*.vcd
+*.ghw
+*.fst
+*.lxt
+*.elwb
+*.vvp
+*.out
+
+# Compiler outputs
+work/
+*.o
+*.so
+*.a
+*.lib
+
+# Synthesis outputs
+synth/
+*.bit
+*.bin
+*.dcp
+*.xdc
+*.prj
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+
+# Waveform files (optional - comment out if you want to track some waveforms)
+# *.vcd
+# *.ghw
+
+# Log files
+*.log
+transcript
+vsim.wlf
+*.rpt
+
+# Temporary files
+*~
+.#*
+#*#
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Build directories
+build/
+dist/
+obj_dir/
+
+# Coverage files
+*.cov
+coverage.dat
+
+# Lint files
+*.lint
+
+# Package lock files (for node-based tools)
+package-lock.json
+yarn.lock
