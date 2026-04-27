@@ -26,16 +26,44 @@
 
 📁 PROJECT STRUCTURE
 --------------------
-├── src/rtl/              # RTL Design Sources
-│   ├── cpu_core.sv       # 32-bit RISC-V CPU core
-│   └── memory_controller.sv # Advanced cache controller
-├── tb/                   # Verification Environment
-│   └── cpu_testbench.sv  # Comprehensive CPU testbench
-├── scripts/              # Automation Scripts
-│   └── run_simulation.py # Professional simulation runner
-├── work/                 # Build artifacts
-├── test/                 # Test automation
-└── Makefile              # Professional build system
+├── src/rtl/              # RTL Design Sources (Production-Ready IP Cores)
+│   ├── cpu_core.sv       # 32-bit RISC-V RV32I CPU core with 5-stage pipeline
+│   │                     # • IF→ID→EX→MEM→WB pipeline stages
+│   │                     # • 32 general-purpose registers
+│   │                     # • Branch prediction & debug interface
+│   │                     # • Hardware performance counters
+│   │                     # • Configurable 8-32 bit data/address width
+│   └── memory_controller.sv # Advanced 4-way set associative cache controller
+│                         # • Write-back policy for optimal performance
+│                         # • Configurable cache size (4KB-64KB)
+│                         # • ECC support & cache coherency
+│                         # • Performance monitoring counters
+├── tb/                   # Verification Environment (Industry-Standard)
+│   └── cpu_testbench.sv  # Comprehensive CPU testbench with:
+│                         # • Pipeline efficiency validation
+│                         # • Cache behavior testing
+│                         # • Performance metrics monitoring
+│                         # • Automated regression testing
+├── scripts/              # Automation Scripts (Professional Tools)
+│   └── run_simulation.py # Professional simulation runner with:
+│                         # • Multi-simulator support (Verilator/ModelSim)
+│                         # • JSON performance reporting
+│                         # • Automated build orchestration
+├── work/                 # Build Artifacts & Generated Files
+│   ├── codegen/          # Verilator C++ generated code
+│   └── *.db, *.elab      # Simulation databases & elaboration files
+├── test/                 # Test Automation Framework
+│   └── test.py           # Automated test suite coordination
+├── Makefile              # Professional Build System with:
+│                         # • Multi-tool support (iverilog/verilator/vivado)
+│                         # • Performance optimization targets
+│                         # • Automated regression flows
+├── README.md             # Comprehensive project documentation
+├── *.vcd, *.elwb         # Waveform files for debugging & analysis
+└── Additional Files:
+    ├── simple_clock.v    # Basic clock generation utilities
+    ├── module_with_class.sv # SystemVerilog OOP examples
+    └── INSTRUCTIONS.md   # Development guidelines
 
 🛠️ DEVELOPMENT TOOLS
 --------------------
