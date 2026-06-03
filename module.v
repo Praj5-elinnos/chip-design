@@ -3,8 +3,7 @@
 // All rights reserved.
 // This code is for educational purposes only.
 
-
-
+`timescale 1ns/1ps
 
 //==============================================================================
 // Module: register_8bit
@@ -29,7 +28,7 @@ always @(posedge clk or posedge rst) begin
     // Note: data_out holds previous value when enable is low
 end
 
-endmodule
+
 
 //==============================================================================
 // End of Module
