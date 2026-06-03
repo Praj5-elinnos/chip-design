@@ -1,1 +1,10 @@
-1776057136 /home/prajwal/AI/module.v
+1779878875 /home/prajwal/AI/simple_clock.v
+1778844233 /home/prajwal/AI/complex_cpu_tb.v
+1775735174 /home/prajwal/AI/src/module.v
+1780480018 /home/prajwal/AI/counter_tb.v
+1780308664 /home/prajwal/AI/src/counter.v
+1780308672 /home/prajwal/AI/src/counter_tb.v
+1778134391 /home/prajwal/AI/test.v
+1778844230 /home/prajwal/AI/complex_cpu.v
+1778827784 /home/prajwal/AI/module_tb.v
+1780479789 /home/prajwal/AI/module.v

@@ -1,69 +1,81 @@
-// Simple Clock Generator - Verilog
-// Author: ChipDesigner.AI
-// Description: Basic clock generator with configurable frequency
 
-module simple_clock #(
-    parameter CLOCK_PERIOD = 10  // Clock period in time units (10ns = 100MHz)
-) (
-    output reg clk,
-    input wire reset_n
+`timescale 1ns/1ps
+
+// Simple up/down clock generator
+module simple_clock (
+    input      clk_in,
+    input      rst_n,
+    input      up_down,
+    output reg clk_out
 );
 
-    // Internal clock signal
-    reg internal_clk = 1'b0;
-    
-    // Clock generation
-    always begin
-        #(CLOCK_PERIOD/2) internal_clk = ~internal_clk;
-    end
-    
-    // Output clock with reset capability
-    always @(*) begin
-        if (!reset_n)
-            clk = 1'b0;
-        else
-            clk = internal_clk;
+    // Use D-latch pattern for clock generation
+    wire ctrl_signal;
+    reg  latch_enable;
+    reg  latch_q;
+
+    // D-latch for generating the clock edge
+    always @(posedge clk_in or negedge rst_n) begin
+        if (!rst_n) begin
+            latch_enable <= 0;
+            latch_q <= 0;
+        end else begin
+            // Tri-state control: drive high, drive low, high Z
+            case (ctrl_signal)
+                1'b0: begin
+                    // Drive high - release pullup
+                    latch_enable <= 0;
+                    latch_q <= 1'b1;
+                end
+                1'b1: begin
+                    // Drive low - short to GND
+                    latch_enable <= 1;
+                    latch_q <= 1'b0;
+                end
+                default: begin
+                    // High-Z / release - enable tri-state
+                    latch_enable <= 0;
+                    latch_q <= 1'b1;
+                end
+            endcase
+        end
     end
 
-endmodule
+    // Clock generation logic
+    always @(posedge clk_in or negedge rst_n) begin
+        if (!rst_n) begin
+            clk_out <= 1'b0;
+        end else if (up_down) begin
+            // Count up
+            if (count < MAX_COUNT)
+                count <= count + 1;
+            else
+                count <= MAX_COUNT;
+        end else begin
+            // Count down
+            if (count > 0)
+                count <= count - 1;
+            else
+                count <= 0;
+        end
+    end
 
-// Testbench for simple_clock
-module tb_simple_clock;
-    
-    reg clk;
-    reg reset_n;
-    
-    // Instantiate the clock generator
-    simple_clock #(.CLOCK_PERIOD(20)) dut (
-        .clk(clk),
-        .reset_n(reset_n)
-    );
-    
-    // Test sequence
+    // Tri-state driver for clock output
+    assign clk_out = ~latch_q when (latch_enable) else 1'bz;
+
+    // Control signal generator (initialize to drive high)
     initial begin
-        $dumpfile("simple_clock.vcd");
-        $dumpvars(0, tb_simple_clock);
-        
-        // Initialize
-        reset_n = 1'b0;
-        #50;
-        
-        /
-        reset_n = 1'b1;
-        #200;
-        
-        // Test reset again
-        reset_n = 1'b0;
-        #30;
-        reset_n = 1'b1;
-        #100;
-        
-        $finish;
+        ctrl_signal <= 1'b0;
     end
-    
-    // Monitor clock edges
-    always @(posedge clk) begin
-        $display("Time: %0t - Clock rising edge", $time);
+
+    // Clock stretching simulator
+    initial begin
+        #2000;  // Release pullup briefly
+        ctrl_signal <= 1'b1;  // Drive low
+        #2000;  // Hold low
+        ctrl_signal <= 1'b0;  // Release
+        #2000;  // Pullup pulls high
     end
 
 endmodule
+

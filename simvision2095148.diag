@@ -1,0 +1,88 @@
+*** Message Type: info ***
+When: Mon Jun 01 10:11:24 UTC 2026
+SimVision started.
+Version: TOOL:  simvision(64)   25.03-s006
+User: prajwal
+Host: srv1457838.hstgr.cloud
+Platform: Linux/x86_64/6.8.0-117-generic
+Started: Mon Jun 01 10:11:24 UTC 2026
+Command: /opt/CadenceTools/tools.lnx86/simvision/bin/64bit/simvision.exe -connect dc:srv1457838.hstgr.cloud:60667 -64BIT -nocopyright
+Work Directory: /home/prajwal/AI
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:11:24 UTC 2026
+Create browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:11:26 UTC 2026
+Create console window: "Console"
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:11:28 UTC 2026
+Connect to Simulator
+      Design: worklib.counter_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       25.03-s006
+        User: prajwal
+        Host: srv1457838.hstgr.cloud
+Time Started: Mon Jun 01 10:11:21 UTC 2026
+  Process ID: 2095104
+   Directory: /home/prajwal/AI
+     Command: xrun -access +rwc src/counter.v src/counter_tb.v -gui
+
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:11:29 UTC 2026
+Create utility window: "Properties"
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:11:45 UTC 2026
+Delete browser window: "Design Browser 1"
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:12:33 UTC 2026
+Exit XM-Sim: user
+      Design: worklib.counter_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       25.03-s006
+        User: prajwal
+        Host: srv1457838.hstgr.cloud
+Time Started: Mon Jun 01 10:11:21 UTC 2026
+  Process ID: 2095104
+   Directory: /home/prajwal/AI
+     Command: xrun -access +rwc src/counter.v src/counter_tb.v -gui
+
+ 
+*** Message Type: error ***
+When: Mon Jun 01 10:12:33 UTC 2026
+XM-Sim Crashed:
+      Design: worklib.counter_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:       xmsim(64)       25.03-s006
+        User: prajwal
+        Host: srv1457838.hstgr.cloud
+Time Started: Mon Jun 01 10:11:21 UTC 2026
+  Process ID: 2095104
+   Directory: /home/prajwal/AI
+     Command: xrun -access +rwc src/counter.v src/counter_tb.v -gui
+      Design: worklib.counter_tb:v
+   Languages: verilog
+   Simulator: XM-Sim
+     Version: TOOL:     xmsim(64)       25.03-s006
+        User: prajwal
+        Host: srv1457838.hstgr.cloud
+Time Started: Mon Jun 01 10:11:21 UTC 2026
+  Process ID: 2095104
+   Directory: /home/prajwal/AI
+     Command: xrun -access +rwc src/counter.v src/counter_tb.v -gui
+
+Outstanding STRAP Requests:
+        strap::report enable out
+ 
+*** Message Type: info ***
+When: Mon Jun 01 10:12:37 UTC 2026
+SimVision Exit.
+ 

@@ -1,4 +1,20 @@
 
+
+//==============================================================================
+// Elinnos Test Module
+// 
+// Description: Simple testbench for basic CPU functionality testing.
+//              This module provides a basic test environment for validating
+//              core design elements and simulation flow.
+//
+// Company: Elinnos Technologies
+// Author: Chip Design Team
+// Date: December 2024
+// Version: 1.0
+//
+// Usage: xrun test.v
+//==============================================================================
+
 `timescale 1ns/1ps
 
 module test_cpu;

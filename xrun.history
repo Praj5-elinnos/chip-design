@@ -1,2 +1,68 @@
 #e1(14Apr2026:11:59:57): source ./xcelium.d/env.d/env.history.14Apr2026_11_59_57
 s1(14Apr2026:11:59:57):  xrun module.v 
+#e2(07May2026:06:18:22): source ./xcelium.d/env.d/env.history.07May2026_06_18_22
+s2(07May2026:06:18:22):  xrun test.v 
+#e3(13May2026:06:44:59): source ./xcelium.d/env.d/env.history.13May2026_06_44_59
+s3(13May2026:06:44:59):  xrun src/counter.v counter_tb.v 
+#e4(13May2026:06:45:09): source ./xcelium.d/env.d/env.history.13May2026_06_45_09
+s4(13May2026:06:45:09):  xrun src/counter.v counter_tb.v 
+#e5(14May2026:10:07:10): source ./xcelium.d/env.d/env.history.14May2026_10_07_10
+s5(14May2026:10:07:10):  xrun module.v 
+#e6(14May2026:10:45:13): source ./xcelium.d/env.d/env.history.14May2026_10_45_13
+s6(14May2026:10:45:13):  xrun module.v 
+#e7(14May2026:10:56:15): source ./xcelium.d/env.d/env.history.14May2026_10_56_15
+s7(14May2026:10:56:15):  xrun module.v 
+#e8(14May2026:11:09:51): source ./xcelium.d/env.d/env.history.14May2026_11_09_51
+s8(14May2026:11:09:51):  xrun module.v 
+#e9(14May2026:11:38:43): source ./xcelium.d/env.d/env.history.14May2026_11_38_43
+s9(14May2026:11:38:43):  xrun module.v 
+#e10(15May2026:06:43:07): source ./xcelium.d/env.d/env.history.15May2026_06_43_07
+s10(15May2026:06:43:07):  xrun module.v module_tb.v 
+#e11(15May2026:06:43:17): source ./xcelium.d/env.d/env.history.15May2026_06_43_17
+s11(15May2026:06:43:17):  xrun module.v module_tb.v 
+#e12(15May2026:06:49:50): source ./xcelium.d/env.d/env.history.15May2026_06_49_50
+s12(15May2026:06:49:50):  xrun module.v module_tb.v 
+#e13(15May2026:06:50:02): source ./xcelium.d/env.d/env.history.15May2026_06_50_02
+s13(15May2026:06:50:02):  xrun +access+r module.v module_tb.v 
+#e14(15May2026:11:23:27): source ./xcelium.d/env.d/env.history.15May2026_11_23_27
+s14(15May2026:11:23:27):  xrun +access+r complex_cpu.v complex_cpu_tb.v 
+#e15(15May2026:11:23:58): source ./xcelium.d/env.d/env.history.15May2026_11_23_58
+s15(15May2026:11:23:58):  xrun +access+r complex_cpu.v complex_cpu_tb.v 
+#e16(15May2026:11:41:56): source ./xcelium.d/env.d/env.history.15May2026_11_41_56
+s16(15May2026:11:41:56):  xrun module.v module_tb.v -access +rwc -linedebug 
+#e17(27May2026:10:18:43): source ./xcelium.d/env.d/env.history.27May2026_10_18_43
+s17(27May2026:10:18:43):  xrun simple_clock.v 
+#e18(27May2026:10:24:25): source ./xcelium.d/env.d/env.history.27May2026_10_24_25
+s18(27May2026:10:24:25):  xrun simple_clock.v 
+#e19(27May2026:10:48:07): source ./xcelium.d/env.d/env.history.27May2026_10_48_07
+s19(27May2026:10:48:07):  xrun simple_clock.v 
+#e20(01Jun2026:10:11:20): source ./xcelium.d/env.d/env.history.01Jun2026_10_11_20
+s20(01Jun2026:10:11:20):  xrun -access +rwc src/counter.v src/counter_tb.v -gui 
+#e21(01Jun2026:10:12:55): source ./xcelium.d/env.d/env.history.01Jun2026_10_12_55
+s21(01Jun2026:10:12:55):  xrun src/counter.v src/counter_tb.v 
+#e22(03Jun2026:09:43:27): source ./xcelium.d/env.d/env.history.03Jun2026_09_43_27
+s22(03Jun2026:09:43:27):  xrun -sv module tb_module 
+#e23(03Jun2026:09:45:12): source ./xcelium.d/env.d/env.history.03Jun2026_09_45_12
+s23(03Jun2026:09:45:12):  xrun -sv module module.v 
+#e24(03Jun2026:09:46:51): source ./xcelium.d/env.d/env.history.03Jun2026_09_46_51
+s24(03Jun2026:09:46:51):  xrun -sv src/module.v counter_tb.v 
+#e25(03Jun2026:09:47:03): source ./xcelium.d/env.d/env.history.03Jun2026_09_47_03
+s25(03Jun2026:09:47:03):  xrun -sv src/module.v counter_tb.v 
+#e26(03Jun2026:09:56:15): source ./xcelium.d/env.d/env.history.03Jun2026_09_56_15
+s26(03Jun2026:09:56:15):  xrun -sv tb_updown_counter tb_updown_counter.v 
+#e27(03Jun2026:10:16:45): source ./xcelium.d/env.d/env.history.03Jun2026_10_16_45
+s27(03Jun2026:10:16:45):  xrun @module.v 
+#e28(03Jun2026:10:38:49): source ./xcelium.d/env.d/env.history.03Jun2026_10_38_49
+s28(03Jun2026:10:38:49):  xrun -sv moduel tb_moduel 
+#e29(03Jun2026:10:38:55): source ./xcelium.d/env.d/env.history.03Jun2026_10_38_55
+s29(03Jun2026:10:38:55):  xrun -sv module tb_module module.v tb_module.v 
+#e30(03Jun2026:10:39:03): source ./xcelium.d/env.d/env.history.03Jun2026_10_39_03
+s30(03Jun2026:10:39:03):  xrun -sv module tb_module module.v tb_module.v 
+#e31(03Jun2026:10:44:04): source ./xcelium.d/env.d/env.history.03Jun2026_10_44_04
+s31(03Jun2026:10:44:04):  xrun -sv src/module.v src/module_tb.v 
+#e32(03Jun2026:10:45:09): source ./xcelium.d/env.d/env.history.03Jun2026_10_45_09
+s32(03Jun2026:10:45:09):  xrun -sv module.v module_tb.v 
+#e33(03Jun2026:10:45:30): source ./xcelium.d/env.d/env.history.03Jun2026_10_45_30
+s33(03Jun2026:10:45:30):  xrun -sv module.v module_tb.v 
+#e34(03Jun2026:10:46:21): source ./xcelium.d/env.d/env.history.03Jun2026_10_46_21
+s34(03Jun2026:10:46:21):  xrun -sv module.v module_tb.v 

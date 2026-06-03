@@ -1,0 +1,16 @@
+module_tb
+├─ reg clk [1 bits]
+├─ reg rst [1 bits]
+├─ reg data_in [7:0] [8 bits]
+├─ reg enable [1 bits]
+├─ wire data_out [7:0] [8 bits]
+└── uut
+    ├─ wire clk [1 bits]
+    ├─ wire rst [1 bits]
+    ├─ wire data_in [7:0] [8 bits]
+    ├─ wire enable [1 bits]
+    └─ reg data_out [7:0] [8 bits]
+
+=== Design Statistics ===
+Modules: 2
+Signals: 10

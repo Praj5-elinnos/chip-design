@@ -1,4 +1,13 @@
+//==============================================================================
+// File: counter_tb.v
+// Description: Testbench for counter module
+// Author: Elinnos Design Team
+// Created: 2026-05-15
+//==============================================================================
+
 `timescale 1ns/1ps
+
+// Begin of the module
 
 module counter_tb;
   reg clk;

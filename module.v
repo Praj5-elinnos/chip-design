@@ -3,7 +3,7 @@
 // All rights reserved.
 // This code is for educational purposes only.
 
-`timescale 1ns/1ps
+`timescale 1ns/1ps // timescale 1ns/1ps
 
 //==============================================================================
 // Module: register_8bit
